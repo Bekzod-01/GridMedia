@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box{
+    /* width: 200px;
+    height: 200px;
+    background-color: yellow;  */
+    /* position: static; */
+}
+
+.header{
+    width: 100%;
+    height: 100px;
+    background-color: grey;
+    align-items: center;
+    display: flex;
+    padding: 0px 70px;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+.header h1{
+    flex: 1;
+}
+
+.box{
+    width: 500px;
+    height: 500px;
+    background-color: rgb(41, 197, 41);
+    position: relative;
+}
+
+.box:hover{
+    translate: .5s;
+    width: 200px;
+    height: 200px;
+}
+
+.inner_box{
+    width: 200px;
+    height: 200px;
+    background-color: red; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.wrap{
+    width: 400px;
+    height: 550px;
+    position: relative;
+
+}
+
+.wrap > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1);
+}
+
+.wrap:hover > .ggg{
+    filter: grayscale(0);
+
+}
+
+.wrap::after{
+    position: absolute;
+    content: '';
+    bottom: -40px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 1s;
+    filter: grayscale(0);
+}
+
+.wrap:hover::after{
+    content: 'My Picture';
+    font-size: 30px;
+    color: #fff;
+    font-weight: 500;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    bottom:0px;
+    opacity: 1;
+
+}
